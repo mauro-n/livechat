@@ -1,4 +1,4 @@
-<head th:fragment="head (title)">
+<head th:fragment="head (title)" th:with="links=${links} ?: ~{}">
   <meta charset="UTF-8">
   <meta
     name="viewport"
@@ -21,9 +21,9 @@
     type="text/css"
   >
   <script th:src="@{/webjars/htmx.org/2.0.0/dist/htmx.min.js}">
-
   </script>
   <script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
   <script th:src="@{/js/app.js}"></script>
+  <script th:replace="${links}"></script>
 </head>

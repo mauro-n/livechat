@@ -21,6 +21,7 @@ public class RoomController {
     @MessageMapping("/messages")
     @SendTo("/topic/messages")
     public List<Message> messages(Message message) {
+        System.out.println("message: " + message);
         List<Message> messages = new ArrayList<>();
         messages.add(message);
         return messages;

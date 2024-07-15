@@ -1,8 +1,9 @@
 <html
   lang="pt-BR"
   th:fragment="layout (title, content)"
+  th:with="links=${links} ?: ~{}"
 >
-<div th:replace="~{/fragments/head :: head (${title})}">
+<div th:replace="~{/fragments/head :: head (title=${title}, links=${links})}">
 </div>
 <body>
 <noscript>

@@ -40,10 +40,10 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function sendName() {
+function sendMessage(message) {
     stompClient.publish({
         destination: "/app/messages",
-        body: JSON.stringify({'content': $("#name").val()})
+        body: JSON.stringify({'content': message})
     });
 }
 

@@ -1,12 +1,38 @@
-<div th:replace="~{fragments/layout :: layout (${'Room X'}, ~{:: #room_main})}">
-  <div
-    id="room_main"
-    class="container center-div"
-  >
-    <main
-      class="main_form border rounded p-4"
+<div th:replace="~{fragments/layout :: layout (title=${'Room X'}, content=~{:: #room_main}, links=~{:: script})}">
+    <script th:src="@{/js/messages.js}"></script>
+    <div
+            id="room_main"
+            class="container center-div"
     >
-      olá mundo sdfsdf
-    </main>
-  </div>
+        <main
+                class="main_form border rounded p-sm-2 p-md-4 p-1"
+        >
+            <h2 class="fs-3">
+                Olá usuário X
+            </h2>
+            <p>Envie sua mensagem digitando no chat abaixo. Envie o código para seus amigos:</p>
+            <div class="d-flex gap-3 align-items-center">
+                <p class="fs-4">XXXX</p>
+                <button>Copiar</button>
+            </div>
+            <ul id="messages" class="border border-secondary w-100 h-75 overflow-y-scroll list-group pt-1">
+                <li class="border px-2 py-1 mx-1 mb-1 list-group-item">
+                    <span class="text-danger">Jao: </span>
+                    <span>
+                        mensagem
+                    </span>
+                </li>
+                <li class="border px-2 py-1 mx-1 mb-1 text-end list-group-item">
+                    <span></span>
+                    <span>
+                        mensagem
+                    </span>
+                </li>
+            </ul>
+            <form class="d-flex mt-3 gap-2 justify-content-between">
+                <input id="textinput" type="text" class="w-100" name="content" autocomplete="off" autofocus>
+                <button id="sendMessageBtn">Enviar</button>
+            </form>
+        </main>
+    </div>
 </div>
