@@ -1,0 +1,17 @@
+<html
+  lang="pt-BR"
+  th:fragment="layout (title, content)"
+>
+<div th:replace="~{/fragments/head :: head (${title})}">
+</div>
+<body>
+<noscript>
+  <h2 style="color: #ff0000">
+    Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!
+  </h2>
+</noscript>
+<div th:block th:replace="${content}"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div th:replace="~{fragments/layout :: layout (${'LiveChat'}, ~{:: main})}">
+  <main
+    class="container center-div alpha"
+  >
+    <form
+      th:hx-post="@{/}"
+      class="border rounded main_form p-4 d-flex flex-column align-items-center"
+    >
+      <h1 class="title mb-4 text-center">Welcome to livechat</h1>
+      <div
+        class="d-flex flex-column gap-3 w-100"
+        style="max-width: 400px"
+      >
+        <input
+          type="text"
+          class="w-100"
+          placeholder="Enter your name"
+          name="name"
+        >
+        <input
+          type="text"
+          class="w-100"
+          placeholder="Enter room code (leave empty for new one)"
+          name="room"
+        >
+      <button>Enter the room</button>
+      </div>
+    </form>
+  </main>
+</div>

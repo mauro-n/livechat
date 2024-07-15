@@ -1,0 +1,11 @@
+.main_form {
+    width: 80%;
+    height: 80%;
+}
+
+.center-div {
+    height: 100vh; /* Full height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
